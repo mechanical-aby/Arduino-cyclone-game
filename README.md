@@ -6,6 +6,8 @@ The game is inspired by the classic "Cyclone" arcade concept. A moving light tra
 Hardware
 - Arduino UNO
 - Addressable LED strips
+- LCD display
+- 1 x Potentiometer
 - 2 x Push buttons
 - 3 x LEDs
   - 1 x Green
