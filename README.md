@@ -6,6 +6,7 @@ The game is inspired by the classic "Cyclone" arcade concept. The project uses a
 The system also includes an LCD menu interface and potentiometer-based menu selection. The potentiometer was used as an alternative input method after the available push buttons were exhausted during prototyping. 
 
 **Engineering Highlights**
+
 Integrated an Arduino with a WS2813 addressable LED strip, LCD, push buttons, indicator LEDs, and potentiometer.
 
 - Developed position and speed control around a circular 30-LED track, including timed updates and adjustable movement speed.
@@ -14,6 +15,7 @@ Integrated an Arduino with a WS2813 addressable LED strip, LCD, push buttons, in
 - Organized gameplay, input handling, scoring, and menu navigation into separate functions to keep the program modular and maintainable.
 
 **Hardware**
+
 - Arduino
 - 30-LED WS2813 strip
 - 16 x 2 LCD
@@ -24,9 +26,9 @@ Integrated an Arduino with a WS2813 addressable LED strip, LCD, push buttons, in
   - 2 x Red LEDs
 
 **Game Modes**
-The game modes included in this project are:
 
 **Normal Mode**
+
 The moving light moves continuously around the circular LED track in one direction. Three difficulty levels available are:
 - Beginner
 - Medium
@@ -37,6 +39,7 @@ Each difficulty level increases the moving light's speed.
 In two-player mode, the speed gradually increases further as the game progresses towards the lap limit.
 
 **Trick Mode**
+
 Trick Mode introduces unpredictable behaviour to make it difficult to press the button while the moving light is in the goal. In this mode, the moving light can:
 
 - Reverse direction when near the goal
@@ -44,6 +47,7 @@ Trick Mode introduces unpredictable behaviour to make it difficult to press the 
   - After the pause, it can choose to continue forward or reverse.
 
 **Brutal Mode**
+
 Brutal Mode is restricted to one player. It builds on Trick Mode by adding even more unpredictable behaviours. The moving light can:
 
 - Temporarily increase its movement speed.
@@ -51,6 +55,7 @@ Brutal Mode is restricted to one player. It builds on Trick Mode by adding even 
 - If the player presses the button too early, it chooses the direction that brings it to the goal quicker.
 
 **Pong Mode**
+
 Pong Mode is inspired by table tennis. It turns the circular track into a two-player game. If a player accurately presses their button, the moving light changes its direction, increases its speed, and moves towards the other player's goal. 
 
 Once a player fails to hit the moving light, the opposing player receives points and the moving light's speed is reset.
