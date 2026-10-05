@@ -5,6 +5,7 @@ The game is inspired by the classic "Cyclone" arcade concept. The project uses a
 
 The system also includes an LCD menu interface and potentiometer-based menu selection. The potentiometer was used as an alternative input method after the available push buttons were exhausted during prototyping. 
 
+
 **Engineering Highlights**
 
 Integrated an Arduino with a WS2813 addressable LED strip, LCD, push buttons, indicator LEDs, and potentiometer.
@@ -13,6 +14,7 @@ Integrated an Arduino with a WS2813 addressable LED strip, LCD, push buttons, in
 - Implemented control logic for menu navigation, gameplay, player input, goal detection, scoring, and game termination.
 - Implemented progressive difficulty by adjusting the speed and unpredictability of the moving light based on game mode, game progression, and player actions.
 - Organized gameplay, input handling, scoring, and menu navigation into separate functions to keep the program modular and maintainable.
+
 
 **Hardware**
 
@@ -24,6 +26,7 @@ Integrated an Arduino with a WS2813 addressable LED strip, LCD, push buttons, in
 - 3 x indicator LEDs
   - 1 x Green LED
   - 2 x Red LEDs
+
 
 **Game Modes**
 
@@ -61,4 +64,5 @@ Pong Mode is inspired by table tennis. It turns the circular track into a two-pl
 Once a player fails to hit the moving light, the opposing player receives points and the moving light's speed is reset.
 
 **Additional Lighting Mode**
+
 The LED strip can also be used independently of the game. The potentiometer controls the LED hue, allowing the strip to function as a single-color light source.
