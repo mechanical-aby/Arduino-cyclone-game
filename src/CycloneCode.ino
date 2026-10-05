@@ -27,41 +27,78 @@ CRGB leds[NUM_LEDS];
 
 #define UPDATES_PER_SECOND 100
 
+//The total number of LEDs the LED strip has.
+//This will be used as the circular track that the moving light travels.
 int LedCount = 30;
+//Represents which LED represents the position of the moving light
 int targetPos = 0;
-float targetSpeed = 25; //Up to a max of 1000
+//How fast the moving light is travelling (Up to a max of 1000)
+float targetSpeed = 25;
+//The speed of the moving light is increased while this value is greater than 0
+//It represents how many LEDs the moving light must travel through before its speed is reset
 int increasedSpeedDuration = 0;
 
+//Represents whether the moving light is moving clockwise or counter-clockwise
 int direction = 1;
+//If this is true, the moving light will not try to punish the player when they make a mistake.
+//It is set to false the next time the moving light crosses the goal.
+//This variable and behaviour is exclusive to brutal mode.
 bool punishPlayer = false;
 
+//Represents which LEDs represent the positions of the goals of player 1 and player 2.
+//To make the game easier, the 2 leds behind and ahead of this one are also included as the player's goal.
 int goalPos[] = {22,6};
+//The score of each player
 int scores[] = {0,0};
+//How many players are currently playing a game mode
 int playerCount = 1;
 
+//If any game mode has been selected
 bool gameStarted = false;
+//If it is currently trick mode
 bool trickMode = false;
+//If it is currently brutal mode
 bool brutalMode = false;
+//If it is currently pong mode
 bool pongMode = false;
+//How many laps the moving light has currently travelled
 float curLaps = 0;
 
+//Whether it is in the main menu, game select menu, or light select menu
 int currentMenuLevel = 0;
+//Which option was chosen in the main menu
 int chosenMainMenu = 0;
+//Which option was chosen in the game menu
 int chosenGameOption = 0;
+//Which option was chosen in the light adjust menu
 int chosenLightOption = 0;
 //String lightOptions[] = {"1. adjust light"} "Use potentiometer to adjust light. click button to return"
+//The starting game speed for each game mode
+//{Normal - beg, normal - med, normal - fast, trick, brutal, pong}
 float gameModeSpeeds[] = {15, 20, 25, 30, 30, 20};//30, 30};
+//Represents the color choice selected in the light adjust menu
 int savedHue = 0;
 
+//If this is 0, the moving light will trigger another change in direction.
+//This direction change will be towards the goal.
+//This is exclusive to the brutal mode.
 int switcherooCooldown = 0;
+//If this is false, it might choose to change its direction near the goal
 bool switched = false;
-bool buttonInput = false;
+//If the respective player has pressed their button
 bool buttonPressed[] = {false,false};
+//If the target has entered the goal of the respective player
 bool hasEnteredGoal[] = {false,false};
+//How much the score increases on a successful or failed button press
+//This value changes depending on the chosen game mode
 int scoreIncrem = 10;
-int amount = 0;
+//This represents how much the speed of the moving light increases.
+//It is exclusive to the pong mode.
 int pongSpeedIncrem = 1;
-int stepsSlowedAfterStopping = 0; //Activates after the target starts moving after a fakeout
+//While this is greater than 0. The moving light moves slower.
+//This represents how many LEDs it will move through before its speed is restored.
+//It activates after the target starts moving after a fakeout.
+int stepsSlowedAfterStopping = 0;
 
 void setup() {
   // put your setup code here, to run once:
