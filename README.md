@@ -24,6 +24,8 @@ Integrated an Arduino with a WS2813 addressable LED strip, LCD, push buttons, in
   - 2 x Red LEDs
 
 **Game Modes**
+The game modes included in this project are:
+
 **Normal Mode**
 The moving light moves continuously around the circular LED track in one direction. Three difficulty levels available are:
 - Beginner
